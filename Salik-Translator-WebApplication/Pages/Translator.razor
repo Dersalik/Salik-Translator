@@ -70,7 +70,7 @@
         if (!string.IsNullOrEmpty(outputLanguage))
         {
             translations = await TranslationService.GetTranslatation(this.inputLanguage,this.inputText, this.outputLanguage);
-            outputText = translations[0].Translations[0].Text;
+            outputText = translations[0]?.Translations[0]?.Text;
             inputLanguage = translations[0]?.DetectedLanguage?.language;
         }
     }

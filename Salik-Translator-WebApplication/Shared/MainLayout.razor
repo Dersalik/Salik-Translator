@@ -3,14 +3,33 @@
 <PageTitle>Salik-Translator-WebApplication</PageTitle>
 
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
+   
 
     <main>
-        <div class="top-row px-4">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="https://github.com/Dersalik">My Github profile</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-mdb-toggle="collapse"
+      data-mdb-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+
+      </div>
+</nav>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <NavMenu />
+        </nav>
+        @*<div class="top-row px-4">
             <a href="https://docs.microsoft.com/aspnet/" target="_blank">About</a>
-        </div>
+        </div>*@
 
         <article class="content px-4">
             @Body
