@@ -7,7 +7,7 @@ namespace Salik_Translator_WebApplication.Services
     public class TranslationService
     {
         private static readonly string location = "germanywestcentral";
-        string subscriptionKey = "1ed2a74e8de44e7c9693d78f2d4476a4";
+        private static readonly string subscriptionKey = "1ed2a74e8de44e7c9693d78f2d4476a4";
 
         public TranslationService()
         {
@@ -15,6 +15,7 @@ namespace Salik_Translator_WebApplication.Services
         }
         public async Task<TranslationResult[]> GetTranslatation(string inputLanguage,string textToTranslate, string targetLanguage)
         {
+
             //string subscriptionKey = "1ed2a74e8de44e7c9693d78f2d4476a4";
             string apiEndpoint = "https://api.cognitive.microsofttranslator.com/";
 

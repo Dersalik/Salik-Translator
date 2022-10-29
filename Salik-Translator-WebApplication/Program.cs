@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
-using Salik_Translator_WebApplication.Data;
 using Salik_Translator_WebApplication.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +8,6 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddHttpClient();
-builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddSingleton<TranslationService>();
 
 var app = builder.Build();
