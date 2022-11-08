@@ -32,7 +32,7 @@
         </div>
     </div>
     <div class="text-center">
-        <button class="btn btn-primary btn-lg" @onclick="Translate">Translate</button>
+        <button class="btn btn-primary btn-lg" @onclick="Translate" disabled=@isDisabledBtn>Translate</button>
     </div>
 </div>
 @code {
@@ -44,7 +44,7 @@
 
     string?  inputText { get; set; }
     string?  outputText { get; set; }
-
+    bool isDisabledBtn { get; set; } = false;
     private Dictionary<string, LanguageDetails> LanguageList = new Dictionary<string, LanguageDetails>();
 
     protected override async Task OnInitializedAsync()
@@ -65,11 +65,14 @@
 
     private async Task Translate()
     {
+
         if (!string.IsNullOrWhiteSpace(outputLanguage) && !string.IsNullOrWhiteSpace(this.inputText))
         {
+            isDisabledBtn = true;
             translations = await TranslationService.GetTranslatation(this.inputLanguage,this.inputText, this.outputLanguage);
             outputText = translations[0]?.Translations[0]?.Text;
             inputLanguage = translations[0]?.DetectedLanguage?.language;
+            isDisabledBtn = false;
         }
     }
 }
